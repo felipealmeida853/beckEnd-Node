@@ -40,6 +40,7 @@ app.use('/files', express.static(path.resolve(__dirname, '..','tmp')));
 app.use(require('./routes'));
 
 //Para aplicação ouvir requisição sockets quanto requisição http
-server.listen(3333);
+//Verificando variavel de ambiente do heroku
+server.listen(process.env.PORT || 3333);
 
 //parei no 1:02:46 ia instalar o socket i/o para ficar realtime
